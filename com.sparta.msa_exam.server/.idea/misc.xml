@@ -3,6 +3,9 @@
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/../com.sparta.msa_exam.auth" />
+    <file type="web" url="file://$PROJECT_DIR$/../com.sparta.msa_exam.gateway" />
+    <file type="web" url="file://$PROJECT_DIR$/../com.sparta.msa_exam.order" />
+    <file type="web" url="file://$PROJECT_DIR$/../com.sparta.msa_exam.product" />
     <file type="web" url="file://$PROJECT_DIR$" />
     <file type="web" url="file://$USER_HOME$/Downloads/com.spring-cloud.sample/com.sparta.msa_exam.order" />
   </component>
