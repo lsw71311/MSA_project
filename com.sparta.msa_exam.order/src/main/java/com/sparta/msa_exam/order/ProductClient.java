@@ -7,8 +7,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @FeignClient(name = "product-service")
 public interface ProductClient {
+
     @GetMapping("/products/{id}")
     ProductResDto getProduct(@PathVariable("id") Long id);
+    @GetMapping("/products")
+    ProductResDto getProducts();
 
     @GetMapping("/products/{id}/reduceQuantity")
     void reduceProductQuantity(@PathVariable("id") Long id, @RequestParam("quantity") int quantity);

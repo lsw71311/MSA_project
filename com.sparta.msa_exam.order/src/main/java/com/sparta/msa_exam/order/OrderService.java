@@ -14,6 +14,7 @@ import java.util.stream.Collectors;
 public class OrderService {
 
     private final OrderRepository orderRepository;
+    private final ProductClient productClient;
 
     // OrderProduct 객체를 생성하는 메소드
     private List<OrderProduct> createOrderProducts(List<Long> productIds, Order order) {
@@ -49,6 +50,12 @@ public class OrderService {
 
     @Transactional
     public OrderResDto addProductToOrder(Long orderId, Long productId) {
+
+        ProductResDto product = productClient.getProduct(productId);
+        if(product == null) {
+            throw new IllegalArgumentException("해당 상품이 존재하지 않습니다. id=" + productId);
+        }
+
         Order order = orderRepository.findById(orderId)
                 .orElseThrow(() -> new IllegalArgumentException("해당 주문이 존재하지 않습니다. id=" + orderId));
 
