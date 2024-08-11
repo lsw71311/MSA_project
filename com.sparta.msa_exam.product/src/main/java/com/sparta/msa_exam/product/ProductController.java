@@ -1,6 +1,8 @@
 package com.sparta.msa_exam.product;
 
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
@@ -9,6 +11,9 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/products")
 @RequiredArgsConstructor
 public class ProductController {
+
+    @Value("${server.port}")
+    private int serverPort;
 
     private final ProductService productService;
 
@@ -23,7 +28,8 @@ public class ProductController {
     }
 
     @GetMapping
-    public Page<ProductResDto> getProducts(Pageable pageable) {
+    public Page<ProductResDto> getProducts(Pageable pageable, HttpServletResponse response) {
+        response.setHeader("Server-Port", String.valueOf(serverPort));
         return productService.getProducts(pageable);
     }
 
