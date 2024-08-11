@@ -24,6 +24,11 @@ public class ProductService {
         return products.map(this::toResponseDto);
     }
 
+    public ProductResDto getProduct(Long id) {
+        Product product = productRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("상품을 찾을 수 없습니다. id=" + id));
+        return toResponseDto(product);
+    }
     private ProductResDto toResponseDto(Product product) {
         return new ProductResDto(
                 product.getId(),
@@ -33,4 +38,5 @@ public class ProductService {
                 product.getUpdatedAt()
         );
     }
+
 }

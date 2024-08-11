@@ -12,6 +12,11 @@ public class ProductController {
 
     private final ProductService productService;
 
+    @GetMapping("/{id}")
+    public ProductResDto getProduct(@PathVariable Long id) {
+        return productService.getProduct(id);
+    }
+
     @PostMapping
     public ProductResDto createProduct(@RequestBody ProductReqDto productReqDto) {
         return productService.createProduct(productReqDto);
@@ -21,6 +26,5 @@ public class ProductController {
     public Page<ProductResDto> getProducts(Pageable pageable) {
         return productService.getProducts(pageable);
     }
-
 
 }
