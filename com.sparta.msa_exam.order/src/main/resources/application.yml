@@ -1,6 +1,16 @@
 spring:
   application:
     name: order-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/msa_exam
+    username: root
+    password: 1225
+  jpa:
+    hibernate:
+      ddl-auto: update        # 필요에 따라 create, none, validate로 변경 가능
+    show-sql: true            # 콘솔에 SQL 쿼리 출력
+    database-platform: org.hibernate.dialect.MySQLDialect
+
 server:
   port: 19092
 eureka:

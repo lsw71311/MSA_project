@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ProductRepository extends JpaRepository<Product, Long> {
 
-    Page<ProductResDto> getProducts(Pageable pageable);
+//    Page<Product> getProducts(Pageable pageable);
 }
