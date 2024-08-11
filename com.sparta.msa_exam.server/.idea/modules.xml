@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.sparta.msa_exam.auth.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.sparta.msa_exam.auth.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.sparta.msa_exam.order.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.sparta.msa_exam.order.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.sparta.msa_exam.product.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.sparta.msa_exam.product.main.iml" />
     </modules>
   </component>
