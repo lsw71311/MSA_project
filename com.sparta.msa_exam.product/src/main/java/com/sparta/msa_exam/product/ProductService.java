@@ -17,7 +17,7 @@ public class ProductService {
 
     @Transactional
     @CacheEvict(cacheNames = "productAllCache", allEntries = true)  //(새로운게 추가되었으니 전체 상품 캐시를 갱신)
-    @CachePut(cacheNames = "productCache", key = "#result.id")  //write through - 개별 상품 캐시 갱신
+    @CachePut(cacheNames = "productCache", key = "#result.product_id")  //write through - 개별 상품 캐시 갱신
     public ProductResDto createProduct(ProductReqDto productReqDto) {
         Product product = Product.createProduct(productReqDto);
         Product savedProduct = productRepository.save(product);
