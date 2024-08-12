@@ -2,6 +2,7 @@ package com.sparta.msa_exam.product;
 
 import lombok.*;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Data
@@ -9,7 +10,7 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProductResDto {
+public class ProductResDto implements Serializable {
 
         private Long product_id;
         private String name;
